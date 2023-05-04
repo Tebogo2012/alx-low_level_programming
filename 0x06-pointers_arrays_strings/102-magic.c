@@ -1,25 +1,28 @@
-#include <stdio.h>
+#include "main.h"
+/**
+ * rot13 - encodes a string using rot13
+ * @s: input string.
+ * Return: the pointer to dest.
+ */
 
-int main(void)
+char *rot13(char *s)
 {
-  int n;
-  int a[5];
-  int *p;
+	int i, j;
 
-  a[2] = 1024;
-  p = &n;
+	char *x = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *y = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-  /*
-   * write your line of code here...
-   * Remember:
-   * - you are not allowed to use a
-   * - you are not allowed to modify p
-   * - only one statement
-   * - you are not allowed to code anything else than this line of code
-   */
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; x[j] != '\0'; j++)
+		{
+			if (s[i] == x[j])
+			{
+				s[i] = y[j];
+				break;
+			}
+		}
+	}
 
- p[5] = 98;
-  /* ...so that this prints 98\n */
-  printf("a[2] = %d\n", a[2]);
-  return (0);
+	return (s);
 }
