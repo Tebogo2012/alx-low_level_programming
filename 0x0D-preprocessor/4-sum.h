@@ -1,12 +1,7 @@
-#include <stdio.h>
+#ifndef _SUM_LIKE_MACRO_
+#define _SUM_LIKE_MACRO_
 
-/**
- * main - prints the name of the file.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	printf("%s\n", __FILE__);
-	return (0);
-}
+#define SUM(x, y) ((x) + (y))
+
+#endif
+
